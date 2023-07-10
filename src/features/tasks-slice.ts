@@ -6,6 +6,7 @@ import { removeUser } from './users-slice';
 
 export type TasksState = {
   entities: Task[];
+  loading?:boolean;
 };
 
 //type DraftTask = Partial<Task> // makes all the properties optional (becaouse i don't have id in the ui when creating)
@@ -19,6 +20,7 @@ export const createTask = (draftTask: DraftTask): Task => {
 const initialState: TasksState = {
     //entities: data.tasks,
     entities: [],
+    loading:false
   };
 
 //async calling API
@@ -63,8 +65,12 @@ const tasksSlice = createSlice({
         }
       })
 
-
+      builder.addCase(fetchTasks.pending,(state , action)=>{
+        state.loading=true;
+      })
+ 
       builder.addCase(fetchTasks.fulfilled,(state , action)=>{
+        state.loading=false;
         state.entities=action.payload
       })
     }

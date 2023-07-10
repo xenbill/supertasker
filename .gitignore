@@ -28,3 +28,8 @@ yarn-error.log\*
 .vscode/settings.json
 .vscode/settings.json
 .vscode/settings.json
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+.vs/supertasker/FileContentIndex/e60a91c1-ae18-41f6-a196-fc8546ee8f9d.vsidx
+.vs/supertasker/FileContentIndex/read.lock
+.vs/supertasker/v17/.wsuo
